@@ -1,5 +1,5 @@
 from functools import reduce
-import operator
+import operator 
 #------------------------------------
 # funciones
 def addOne(n):
@@ -84,7 +84,6 @@ print(foldr(operator.add,numbers,0))
 
 #------------------------------------
 # reduce
-
 sum = reduce(add, numbers,0)
 print(sum)
 
@@ -92,13 +91,13 @@ print(sum)
 # reduce
 
 numbers = [1,2,3,4,5,6,7,8,9,10]
-sum = reduce(operator.mul, numbers,0)
-print(sum)
+result = reduce(operator.mul, numbers,0)
+print(result) 
 
 #------------------------------------
-# agregar elementos a la lista
+# concatenar dos listas
 
 numbers2 = [1,2,3,4,5,6,7,8,9,10]
-numbers3 = numbers2+ [11]
+numbers3 = numbers2 + [11]
 print(list(numbers2))
 print(list(numbers3))
