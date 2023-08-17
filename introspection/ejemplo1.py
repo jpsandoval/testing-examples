@@ -1,4 +1,3 @@
-
 import inspect
 from bank_account import BankAccount
 
@@ -7,7 +6,7 @@ account = BankAccount()
 # dir: It returns a list of attributes and methods belonging to an object.
 
 data = dir(account)
-# print(data)
+#print(data)
 
 # ---------------------------------------------
 # type: The type function returns the type of an object. 
@@ -46,7 +45,9 @@ print(account.__dict__.values())
 # ---------------------------------------------
 # obtener metodos de una clase
 list_of_methods = inspect.getmembers(BankAccount, predicate=inspect.isfunction)
-
+print("---- * ---- ")
+print(list_of_methods)
+print("---- * ---- ")
 # ---------------------------------------------
 # un metodo en una clase es una instancia de funcion
 # list_of_methods es una lista de pares (nombre, funcion)

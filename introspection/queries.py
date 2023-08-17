@@ -17,7 +17,8 @@ def methodsWith(substring, cls):
     pairs = inspect.getmembers(cls, predicate=inspect.isfunction)
     # pair[0] es el nombre del método
     # pair[1] es la función
-    return collect(lambda pair: pair[0], select(lambda pair: substring in pair[0], pairs))
+    paresFiltrados = select(lambda pair: substring in pair[0], pairs)
+    return collect(lambda pair: pair[0], paresFiltrados)
 
 
 # E3: nombres de métodos sin documentar

@@ -1,7 +1,7 @@
 
 class BankAccount:
     def __init__(self):
-        """ Constructor 2"""
+        """ Constructor Documentacion """
         self.balance = 0
         
     def deposit(self, amount):
