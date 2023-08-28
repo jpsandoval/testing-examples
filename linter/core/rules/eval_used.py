@@ -6,7 +6,7 @@ from core.rules.warning import *
 # A veces se usa la funcion 'eval' con expresiones de fuentes poco fiables y esto es poco seguro.
 
 class EvalVisitor(WarningNodeVisitor):
-    def visit_Call(self, node):
+    def visit_Call(self, node: Call):
         if node.func.id == 'eval':
             self.addWarning('EvalWarning', node.lineno, 'eval should not be used!!')
         NodeVisitor.generic_visit(self, node)

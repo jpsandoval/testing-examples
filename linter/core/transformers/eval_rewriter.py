@@ -10,8 +10,8 @@ class LiteralEvalTransformer(NodeTransformer):
         newNode = NodeTransformer.generic_visit(self,node)        
         if newNode.func.id == 'eval':
             return Call(func=Name(id='literal_eval', ctx=Load()), 
-                        args=newNode.args, 
-                        keywords=newNode.keywords)
+                        args=node.args, 
+                        keywords=node.keywords)
         else:
             return newNode
 
