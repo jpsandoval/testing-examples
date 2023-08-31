@@ -2,3 +2,4 @@
 
 from ..transformers import *
 from .eval_rewriter import *
+from .if_true_rewriter import *

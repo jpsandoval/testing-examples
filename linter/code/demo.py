@@ -1,2 +1,2 @@
 def function():
-  eval('2')
+  eval(eval('2'))

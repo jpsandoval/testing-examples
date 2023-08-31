@@ -11,7 +11,6 @@ class Sampler:
         self.t= threading.Thread(target=self.sample, args=())
         self.active = True
         
-        
     def start(self):
         self.active = True
         self.t.start()
@@ -21,11 +20,15 @@ class Sampler:
         self.active = False
         
     def printStackTrace(self):
-        for thread_id, frame in sys._current_frames().items():
+        for thread_id, frames in sys._current_frames().items():
             if thread_id == self.tid :
                 print('Stack for thread {}'.format(thread_id))
-                print(frame.__class__)
-                traceback.print_stack(frame) 
+                stack = traceback.walk_stack(frames)
+                for frame, _ in stack:  # pragma: no branch
+                    code = frame.f_code.co_name
+                    locals = frame.f_locals
+                    print(code)
+                #traceback.print_stack(frame) 
     
     def sample(self):
         while self.active:
