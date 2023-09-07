@@ -43,11 +43,7 @@ class ClockDisplay:
         else:
             return f"{self.hour - 12:02d}:{self.minute:02d} PM"
     
-    @classmethod
-    def create(cls):
-        current_time = datetime.now()
-        return cls(current_time.hour, current_time.minute)
-
+    
     @classmethod
     def create(cls, time_api):
         return time_api.get_current_time_in_chile()
