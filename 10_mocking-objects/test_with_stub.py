@@ -12,7 +12,9 @@ class MailServiceStub(MailService):
         return len(self.messages)
 
 class TestDemoMethods(unittest.TestCase):
-
+    # este test evalua la clase Order
+    # sin depender de la implementacion original de MailService
+    
     def test(self):
         order = Order("iPhone 14",10)
         stub = MailServiceStub()

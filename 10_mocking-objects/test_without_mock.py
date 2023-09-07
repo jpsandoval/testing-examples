@@ -3,7 +3,8 @@ from warehouse import Warehouse
 import unittest
 
 class TestDemoMethods(unittest.TestCase):
-
+    # este test no evalua la clase Order en isolation
+    # porque el metodo check availability depende de otra clase
     
     def test2(self):
         order = Order("iPhone 14",10)
