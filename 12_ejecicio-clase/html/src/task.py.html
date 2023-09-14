@@ -1,0 +1,33 @@
+<html><body><h1>src/task.py</h1>Killed 9 out of 12 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 7</h3><pre>--- src/task.py
++++ src/task.py
+@@ -9,7 +9,7 @@
+         return self.completed
+ 
+     def complete_task(self):
+-        self.completed = True
++        self.completed = False
+ 
+     def __str__(self):
+         status = "Done" if self.completed else "Not Done"
+</pre><h3>Mutant 8</h3><pre>--- src/task.py
++++ src/task.py
+@@ -9,7 +9,7 @@
+         return self.completed
+ 
+     def complete_task(self):
+-        self.completed = True
++        self.completed = None
+ 
+     def __str__(self):
+         status = "Done" if self.completed else "Not Done"
+</pre><h3>Mutant 9</h3><pre>--- src/task.py
++++ src/task.py
+@@ -12,6 +12,6 @@
+         self.completed = True
+ 
+     def __str__(self):
+-        status = "Done" if self.completed else "Not Done"
++        status = "XXDoneXX" if self.completed else "Not Done"
+         return f"Task {self.task_id}: {self.description} (Priority: {self.priority}, {status})"
+ 
+</pre></body></html>

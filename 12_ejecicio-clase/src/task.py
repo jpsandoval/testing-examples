@@ -4,6 +4,9 @@ class Task:
         self.description = description
         self.priority = priority
         self.completed = completed
+    
+    def is_completed(self):
+        return self.completed
 
     def complete_task(self):
         self.completed = True

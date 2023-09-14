@@ -1,0 +1,133 @@
+<html><body><h1>src/todo_list.py</h1>Killed 1 out of 13 mutants<h2>Survived</h2>Survived mutation testing. These mutants show holes in your test suite.<h3>Mutant 14</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -6,7 +6,7 @@
+         self.tasks = []
+ 
+     def add_task(self, description):
+-        task_id = len(self.tasks) + 1
++        task_id = len(self.tasks) - 1
+         task = Task(task_id, description)
+         self.tasks.append(task)
+         return task
+</pre><h3>Mutant 15</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -6,7 +6,7 @@
+         self.tasks = []
+ 
+     def add_task(self, description):
+-        task_id = len(self.tasks) + 1
++        task_id = len(self.tasks) + 2
+         task = Task(task_id, description)
+         self.tasks.append(task)
+         return task
+</pre><h3>Mutant 16</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -6,7 +6,7 @@
+         self.tasks = []
+ 
+     def add_task(self, description):
+-        task_id = len(self.tasks) + 1
++        task_id = None
+         task = Task(task_id, description)
+         self.tasks.append(task)
+         return task
+</pre><h3>Mutant 17</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -7,7 +7,7 @@
+ 
+     def add_task(self, description):
+         task_id = len(self.tasks) + 1
+-        task = Task(task_id, description)
++        task = None
+         self.tasks.append(task)
+         return task
+ 
+</pre><h3>Mutant 18</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -13,7 +13,7 @@
+ 
+     def remove_task(self, task_id):
+         for task in self.tasks:
+-            if task.task_id == task_id:
++            if task.task_id != task_id:
+                 self.tasks.remove(task)
+                 return f"Task {task_id} removed."
+         return f"Task {task_id} not found."
+</pre><h3>Mutant 19</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -15,7 +15,7 @@
+         for task in self.tasks:
+             if task.task_id == task_id:
+                 self.tasks.remove(task)
+-                return f"Task {task_id} removed."
++                return f"XXTask {task_id} removed.XX"
+         return f"Task {task_id} not found."
+ 
+     def complete_task(self, task_id):
+</pre><h3>Mutant 20</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -16,7 +16,7 @@
+             if task.task_id == task_id:
+                 self.tasks.remove(task)
+                 return f"Task {task_id} removed."
+-        return f"Task {task_id} not found."
++        return f"XXTask {task_id} not found.XX"
+ 
+     def complete_task(self, task_id):
+         for task in self.tasks:
+</pre><h3>Mutant 21</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -20,7 +20,7 @@
+ 
+     def complete_task(self, task_id):
+         for task in self.tasks:
+-            if task.task_id == task_id:
++            if task.task_id != task_id:
+                 task.complete_task()
+                 return f"Task {task_id} marked as done."
+         return f"Task {task_id} not found."
+</pre><h3>Mutant 22</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -22,7 +22,7 @@
+         for task in self.tasks:
+             if task.task_id == task_id:
+                 task.complete_task()
+-                return f"Task {task_id} marked as done."
++                return f"XXTask {task_id} marked as done.XX"
+         return f"Task {task_id} not found."
+ 
+     def find_high_priority_tasks(self, threshold):
+</pre><h3>Mutant 23</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -23,7 +23,7 @@
+             if task.task_id == task_id:
+                 task.complete_task()
+                 return f"Task {task_id} marked as done."
+-        return f"Task {task_id} not found."
++        return f"XXTask {task_id} not found.XX"
+ 
+     def find_high_priority_tasks(self, threshold):
+         high_priority_tasks = []
+</pre><h3>Mutant 24</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -26,7 +26,7 @@
+         return f"Task {task_id} not found."
+ 
+     def find_high_priority_tasks(self, threshold):
+-        high_priority_tasks = []
++        high_priority_tasks = None
+         for task in self.tasks:
+             if task.priority > threshold:
+                 high_priority_tasks.append(task)
+</pre><h3>Mutant 25</h3><pre>--- src/todo_list.py
++++ src/todo_list.py
+@@ -28,7 +28,7 @@
+     def find_high_priority_tasks(self, threshold):
+         high_priority_tasks = []
+         for task in self.tasks:
+-            if task.priority > threshold:
++            if task.priority >= threshold:
+                 high_priority_tasks.append(task)
+         return high_priority_tasks
+ 
+</pre></body></html>
